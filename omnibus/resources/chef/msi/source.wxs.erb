@@ -160,12 +160,6 @@
                   <ServiceControl Id="ControlChefClientService" Name="chef-client"
                                   Remove="both" Stop="both" Wait="yes" />
                 </Component>
-                <Component Id="ChefClientLog" Guid="{8e492d59-3a0c-43fd-b889-e35dfa33da91}">
-                    <util:EventSource xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
-                        Name="Chef" Log="Application"
-                        EventMessageFile="[PROJECTLOCATION]$(var.ChefLogDllPath)"
-                        />
-                </Component>
               </Directory>
             </Directory>
           </Directory>
@@ -189,7 +183,6 @@
       <ComponentRef Id="ProjectLocationPermissions" />
       <ComponentRef Id="ChefClientPath" />
       <ComponentRef Id="CONFIGLOCATIONDIR" />
-      <ComponentRef Id="ChefClientLog" />
     </Feature>
 
     <Feature Id="ChefPSModuleFeature" Title="!(loc.FeaturePSModuleName)" Level="1000" AllowAdvertise="no">
